@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%= require('html-loader!./layout/head-common.html')  %>
+		<title>个人电商平台开发</title>
+	</head>	
+	
+	<body>
+
+		<div>
+			<i class="fa fa-user"></i>    
+			<!-- 引入icons-font字体库图标 -->
+
+
+			<a class="link">test</a>
+			<a class="link-text">test</a>			
+		</div>
+		<div>
+			<a class="btn">test</a>
+			<a class="btn btn-mini">test</a>		
+			<!-- 由于btn-mini样式与btn样式很多都是一样的,故而可以采用继承的方式(class="btn btn-mini") -->	
+		</div>
+		<div>
+			<div class="loading"></div>			
+		</div>
+		
+		
+
+		<%= require('html-loader!./layout/footer.html')  %>
+		
+		
+	</body>
+
+</html>

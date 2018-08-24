@@ -1,0 +1,109 @@
+/*
+* @Author: Winnie
+* @Date:   2018-08-23 09:22:21
+* @Last Modified by:   Winnie
+* @Last Modified time: 2018-08-24 16:13:49
+*/
+
+/* css reset  把dom元素中默认的样式去掉或者统一起来，防止不同浏览器会不起作用*/
+*{  /* 将所有的样式的 margin和padding 都统一起来 */
+	margin: 0;
+	padding: 0;
+}
+/*  对页面清除默认格式  */
+body{
+	background: 000;
+	font: 12px/1.5 tahoma, arial, Microsoft YaHei, sans-serif;  /* 这几种字体类型; 字体的匹配: 从前往后匹配  */
+}
+li{
+	list-style: none;
+}
+img{
+	display: block;
+	border: none;
+}
+label{
+	cursor: pointer;
+}
+input[type='checkbox']{
+	cursor: pointer;
+}
+
+/* 定宽布局 : 小诀窍：定义一个宽度的class就好,在需要定宽的位置上直接调用就ok */
+.w{
+	width: 1080px;
+	margin: 0 auto;      /* 居中 */
+	position: relative;
+	overflow: hidden;    /* 作用: 1、清除浮动 2、让超出边界的东西不显示 */
+
+}
+/*  html的large类 ： 做屏幕适配的方法、通过js给html加方法、可以兼容IE、但media查询(媒体查询)不适用
+.large .w{  
+	width: 1600px
+}
+ */
+
+
+ /* 全局通用样式 */
+ /* 隐藏类 */
+ .hide{
+ 	display: none;
+ }
+
+ /* 超链样式 */
+ .link{
+ 	color: #999;
+ 	cursor: pointer;
+ 	text-decoration: none;
+ }
+.link:hover{   /* 鼠标移上去发生动作 */
+	color: #e80012;
+}
+.link-text{
+	color: #999;
+	text-decoration: none;
+}
+
+/* btn */
+.btn{
+	display: inline-block;
+	padding: 0 20px;
+	height: 40px;
+	line-height: 40px;       /* height与line-height同时使用,可以使文字垂直居中 */
+	vertical-align: middle;  /* 放置其他样式程度; 属性设置元素的垂直对齐方式 */
+	border: none;
+	background: #c60023;
+	font-size: 17px;
+	font-weight: bold;
+	color: #fff;
+	outline: none;
+	cursor: pointer;
+	text-decoration: none;
+}
+.btn-mini{
+	height: 25px;
+	line-height: 25px;
+	font-size: 15px;
+	padding: 0 10px;
+}
+
+/* loading */
+.loading{
+	margin: 10px auto;
+	display: block;
+	width: 50px;
+	height: 45px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	background: url(../../image/icon/loading.gif) no-repeat;
+	opacity: .6;
+}
+
+
+/* 测试代码：测试通用样式引用是否生效 
+body{
+	background: #000;
+}
+*/
+
+

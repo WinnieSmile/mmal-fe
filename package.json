@@ -1,0 +1,30 @@
+{
+  "name": "mmal-fe",
+  "version": "1.0.0",
+  "description": "mmal前端代码",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:smilewang/mmal-fe.git"
+  },
+  "author": "winnie",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.22.1",
+    "url-loader": "^1.1.1",
+    "webpack": "^1.15.0",
+    "webpack-dev-server": "^1.16.5"
+  },
+  "dependencies": {
+    "babel-loader": "^7.1.5",
+    "font-awesome": "^4.7.0",
+    "hogan": "^1.0.2"
+  }
+}
