@@ -2,7 +2,7 @@
 * @Author: Winnie
 * @Date:   2018-08-23 09:22:21
 * @Last Modified by:   Winnie
-* @Last Modified time: 2018-08-24 16:13:49
+* @Last Modified time: 2018-08-26 11:46:36
 */
 
 /* css reset  把dom元素中默认的样式去掉或者统一起来，防止不同浏览器会不起作用*/
@@ -12,7 +12,7 @@
 }
 /*  对页面清除默认格式  */
 body{
-	background: 000;
+	background: #f6f6f6;   /* 整个页面的底色 */
 	font: 12px/1.5 tahoma, arial, Microsoft YaHei, sans-serif;  /* 这几种字体类型; 字体的匹配: 从前往后匹配  */
 }
 li{

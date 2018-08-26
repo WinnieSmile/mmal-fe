@@ -1,0 +1,17 @@
+/*
+* @Author: Winnie
+* @Date:   2018-08-25 10:28:29
+* @Last Modified by:   Winnie
+* @Last Modified time: 2018-08-26 11:45:11
+*/
+.nav-simple{
+	height: 60px;
+	line-height: 60px;
+	border-bottom: 1px solid #ddd;
+	background: #fff;   /* 头部导航栏的颜色 */
+}
+.nav-simple .logo{
+	font-size: 26px;
+	font-weight: bold;
+	color: #c60023;
+}

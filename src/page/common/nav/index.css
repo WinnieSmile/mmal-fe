@@ -1,0 +1,30 @@
+/*
+* @Author: Winnie
+* @Date:   2018-08-25 11:38:52
+* @Last Modified by:   Winnie
+* @Last Modified time: 2018-08-26 11:39:09
+*/
+.nav{
+	background: #eee;
+	height: 30px;
+	line-height: 30px;
+}
+/* 用户部分 */
+.nav .user{
+	float: left;
+}
+.nav .user.login{  /* 注册; .user与.login之间没有空格、原因:表示同一个元素_即class中既有user又有login的元素; */ 
+	display: none;
+}
+.nav .user .link{  
+	margin-right: 5px;  /* 使用 margin-right 而不是 margin-left ;保持左边是对齐的,边距是从右边开始算 */
+}
+
+/* 导航链接部分 */
+.nav .nav-list{
+	float: right;
+}
+.nav .nav-list .nav-item{  /* 将nav-list下的每一行变成inline-block形式 */
+	display: inline-block;
+	margin-left: 5px;  /* 使用margin-left而不是margin-right是为了右边的对齐,然后进行间距的调整 */
+}
