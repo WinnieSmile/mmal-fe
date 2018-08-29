@@ -2,12 +2,17 @@
 * @Author: Winnie
 * @Date:   2018-08-25 17:01:04
 * @Last Modified by:   Winnie
-* @Last Modified time: 2018-08-25 18:44:27
+* @Last Modified time: 2018-08-28 15:52:26
 */
+
+
 
 var _mm = require('util/mm.js');
 
+
 var _cart = {
+
+    
     // 获取购物车数量
     getCartCount : function(resolve, reject){
         _mm.request({
@@ -16,6 +21,7 @@ var _cart = {
             error   : reject
         });
     },
+
     // 添加到购物车
     addToCart : function(productInfo, resolve, reject){
         _mm.request({

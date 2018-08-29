@@ -2,7 +2,7 @@
 * @Author: Winnie
 * @Date:   2018-08-23 09:22:21
 * @Last Modified by:   Winnie
-* @Last Modified time: 2018-08-26 11:46:36
+* @Last Modified time: 2018-08-28 21:09:36
 */
 
 /* css reset  把dom元素中默认的样式去掉或者统一起来，防止不同浏览器会不起作用*/
@@ -42,6 +42,24 @@ input[type='checkbox']{
 	width: 1600px
 }
  */
+
+ /* panel 放东西的容器 */
+ .panel{
+ 	padding: 10px;
+ 	margin-bottom: 10px;
+ 	background: #fff;
+ }
+ .panel .panel-title{
+ 	padding: 10px;
+ 	font-size: 14px;
+ 	color: #666;
+ 	font-weight: bold;
+ 	border-bottom: 1px solid #eee;
+ }
+ .panel .panel-body{
+ 	padding: 10px;
+ 	overflow: hidden;
+ }
 
 
  /* 全局通用样式 */

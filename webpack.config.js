@@ -2,7 +2,7 @@
 * @Author: Winnie
 * @Date:   2018-08-20 16:14:45
 * @Last Modified by:   Winnie
-* @Last Modified time: 2018-08-25 23:07:18
+* @Last Modified time: 2018-08-29 09:43:32
 */
 var webpack             = require('webpack');
 var ExtractTextPlugin   = require("extract-text-webpack-plugin");
@@ -27,10 +27,15 @@ var getHtmlConfig = function(name, title){
 // webpack config
 var config = {
 	entry: {
-		'common'     : ['./src/page/common/index.js'],
-		'index'      : ['./src/page/index/index.js'],
-		'login'      : ['./src/page/login/index.js'],
-		'result'     : ['./src/page/result/index.js']
+		'common'               : ['./src/page/common/index.js'],
+		'index'                : ['./src/page/index/index.js'],
+		'user-login'           : ['./src/page/user-login/index.js'],
+		'user-register'        : ['./src/page/user-register/index.js'],
+		'user-pass-reset'      : ['./src/page/user-pass-reset/index.js'],
+		'user-center'          : ['./src/page/user-center/index.js'],
+		'user-center-update'   : ['./src/page/user-center-update/index.js'],
+		'user-pass-update'     : ['./src/page/user-pass-update/index.js'],
+		'result'               : ['./src/page/result/index.js'],
 	},
 	output:{
 		path:'./dist',   //存放文件时的路径,最终生成文件的目录
@@ -72,7 +77,12 @@ var config = {
 		//html模板的处理
 		new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
 		//新new一个login文件页面(和上方的index文件页面一样)
-		new HtmlWebpackPlugin(getHtmlConfig('login', '用户登录')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')),
 		new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
 			
 	]

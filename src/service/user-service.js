@@ -2,7 +2,7 @@
 * @Author: Winnie
 * @Date:   2018-08-25 17:00:31
 * @Last Modified by:   Winnie
-* @Last Modified time: 2018-08-25 18:46:09
+* @Last Modified time: 2018-08-29 19:24:30
 */
 
 var _mm = require('util/mm.js');
@@ -101,7 +101,7 @@ var _user = {
             error   : reject
         });
     },
-    // 登录状态下更新密码
+    // 登录状态下更新密码(与重置密码区分)
     updatePassword : function(userInfo, resolve, reject){
         _mm.request({
             url     : _mm.getServerUrl('/user/reset_password.do'),

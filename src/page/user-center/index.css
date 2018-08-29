@@ -1,0 +1,16 @@
+/*
+* @Author: Winnie
+* @Date:   2018-08-28 11:21:10
+* @Last Modified by:   Winnie
+* @Last Modified time: 2018-08-28 20:50:09
+*/
+.form-line{
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+}
+.form-line .label{
+	display: inline-block;
+	width: 60px;
+	text-align: center;
+}

@@ -2,7 +2,7 @@
 * @Author: Winnie
 * @Date:   2018-08-25 15:43:59
 * @Last Modified by:   Winnie
-* @Last Modified time: 2018-08-25 17:53:20
+* @Last Modified time: 2018-08-28 21:05:27
 */
 
 /* 通用头部导航 */
@@ -14,6 +14,7 @@
 	font-size: 36px;
 	color: #c60023;
 	font-weight: bold;
+	text-decoration: none; 
 }
 
 .header .search-con{
@@ -26,9 +27,21 @@
 	padding-left: 10px;
 	font-size: 15px;
 	border: 2px solid #c60023;
+	outline: none;
 }
 .header .search-con .search-btn{ /* 复用一个btn */
 	position: absolute;
 	height: 44px;
 	width: 80px;
+}
+
+/* 面包屑导航 */
+.crumb{
+	margin-bottom: 16px;
+	height: 50px;
+	line-height: 50px;
+	background: #eee;
+	color: #ccc;
+	font-size: 14px;
+	border-top: 2px solid #c60023;
 }

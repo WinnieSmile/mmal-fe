@@ -2,7 +2,7 @@
 * @Author: Winnie
 * @Date:   2018-08-22 17:28:21
 * @Last Modified by:   Winnie
-* @Last Modified time: 2018-08-24 13:32:06
+* @Last Modified time: 2018-08-26 17:06:05
 */
 
 //网络请求工具(Ajax请求，服务器地址配置)
@@ -101,7 +101,7 @@ var _mm = {
 
     // 统一登录处理
     doLogin : function(){
-        window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);        // 登录完跳回当前页面
+        window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);        // 登录完跳回当前页面
     },
     goHome : function(){   //跳转: 跳回主页
         window.location.href = './index.html';  //跳转方法
