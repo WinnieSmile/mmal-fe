@@ -1,0 +1,41 @@
+/*
+* @Author: Winnie
+* @Date:   2018-09-05 22:16:53
+* @Last Modified by:   Winnie
+* @Last Modified time: 2018-09-06 17:09:30
+*/
+
+.pg-content{
+	text-align: center;
+	color: #333;
+}
+.pg-content .pg-item{
+	display: inline-block;
+	height: 36px;
+	line-height: 36px;
+	padding: 0 15px;
+	margin: 0 2px;
+	border: 1px solid #ccc;
+	background: #eee;
+	cursor: pointer;
+	-moz-user-select: none;        /* user-select的兼容  */
+	-webkit-user-select: none;     /* user-select的兼容  */
+	-ms-user-select: none;         /* user-select的兼容  */
+	user-select: none;      /* css3中：决定用户是否与选中文本; 注意浏览器的兼容。 作用：当用户点击分页栏eg:|上一页| 1 2 3 4 =5= 6|下一页| 5/6 时，点击当前页1，是不会选中的, */  
+}
+
+.pg-content .pg-item.disabled{	
+	color: #ccc;
+	background: none;
+	cursor: auto;
+}
+.pg-content .pg-item.active{	
+	border: 1px solid #f6f6f6;
+	background: none;
+	cursor: auto;
+}
+.pg-content .pg-total{
+	margin-left: 10px;
+	background: none;
+	cursor: auto;
+}

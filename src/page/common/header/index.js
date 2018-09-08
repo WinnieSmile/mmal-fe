@@ -2,7 +2,7 @@
 * @Author: Winnie
 * @Date:   2018-08-25 15:47:13
 * @Last Modified by:   Winnie
-* @Last Modified time: 2018-08-25 18:30:12
+* @Last Modified time: 2018-09-01 15:49:24
 */
 
 require('./index.css');
@@ -11,9 +11,10 @@ var _mm     = require('util/mm.js');
 // 通用页面头部
 var header = {
 	init : function(){
+		this.onLoad();
 		this.bindEvent();
 	},
-	onload : function(){
+	onLoad : function(){
 		var keyword = _mm.getUrlParam('keyword');
 		//keyword存在，则回填输入框
 		if (keyword) {

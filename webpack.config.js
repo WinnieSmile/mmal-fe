@@ -2,7 +2,7 @@
 * @Author: Winnie
 * @Date:   2018-08-20 16:14:45
 * @Last Modified by:   Winnie
-* @Last Modified time: 2018-08-29 09:43:32
+* @Last Modified time: 2018-09-06 17:28:19
 */
 var webpack             = require('webpack');
 var ExtractTextPlugin   = require("extract-text-webpack-plugin");
@@ -29,6 +29,8 @@ var config = {
 	entry: {
 		'common'               : ['./src/page/common/index.js'],
 		'index'                : ['./src/page/index/index.js'],
+		'list'                 : ['./src/page/list/index.js'],
+		'detail'               : ['./src/page/detail/index.js'],
 		'user-login'           : ['./src/page/user-login/index.js'],
 		'user-register'        : ['./src/page/user-register/index.js'],
 		'user-pass-reset'      : ['./src/page/user-pass-reset/index.js'],
@@ -48,15 +50,22 @@ var config = {
 	module: {
 	    loaders: [
 	    	{ test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader","css-loader") },
-	    	{ test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader'}, 
-	    	{ test: /\.string$/, loader: 'html-loader'} 
+	    	{ test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]'}, 
+	    	{
+                test: /\.string$/, 
+                loader: 'html-loader',
+                query : {
+                    minimize : true,
+                    removeAttributeQuotes : false
+                }
+            }
 	    ]
     },
 	
 	
     resolve : {  //给页面配别名,省去调用页面使用../../util的麻烦
     	alias : {
-    		util            : __dirname + '/src/util',
+    		util            : __dirname + '/src/util',   //__dirname表示当前的根目录
     		page            : __dirname + '/src/page',
     		service         : __dirname + '/src/service',
     		image           : __dirname + '/src/image',
@@ -76,6 +85,8 @@ var config = {
 		new ExtractTextPlugin("css/[name].css"),
 		//html模板的处理
 		new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
+		new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表')),
+		new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情页')),
 		//新new一个login文件页面(和上方的index文件页面一样)
 		new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')),
@@ -85,12 +96,24 @@ var config = {
 		new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')),
 		new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
 			
-	]
+	],
+	devServer: {
+        port: 8088,
+        inline: true,
+        proxy : {
+            '**/*.do' : {
+                target: 'http://test.happymmall.com',
+                changeOrigin : true
+            }
+        }
+    }
 };
 
+/*
 if ('dev' === WEBPACK_ENV) {
 	config.entry.common.push('webpack-dev-server/client?http://localhost:8088/');
 }
+*/
 
 module.exports = config;
 

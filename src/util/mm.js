@@ -2,7 +2,7 @@
 * @Author: Winnie
 * @Date:   2018-08-22 17:28:21
 * @Last Modified by:   Winnie
-* @Last Modified time: 2018-08-26 17:06:05
+* @Last Modified time: 2018-09-04 15:22:12
 */
 
 //网络请求工具(Ajax请求，服务器地址配置)
@@ -65,8 +65,8 @@ var _mm = {
     // 渲染html模板
     renderHtml : function(htmlTemplate, data){        // 传入模板和数据
     
-        var template    = Hogan.compile(htmlTemplate),  //调用 hogan方法
-            result      = template.render(data);
+        var template    = Hogan.compile(htmlTemplate),  // 调用 hogan方法,做第一步的编译
+            result      = template.render(data);        // 第二步的输出
         return result;
     },
    
