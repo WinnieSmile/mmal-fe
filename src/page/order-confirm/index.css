@@ -1,0 +1,188 @@
+/*
+* @Author: Winnie
+* @Date:   2018-09-10 16:27:43
+* @Last Modified by:   Winnie
+* @Last Modified time: 2018-09-11 21:11:20
+*/
+
+/* 地址部分的样式 */
+.address-item,
+.address-add{
+	margin: 20px 20px 0 0;
+	width: 200px;
+	padding: 5px 8px;
+	float: left;
+	border: 3px dashed #ccc;
+	cursor: pointer;
+} 
+.address-item.active{   /* item与.active中间，此处没有加空格表示同意的意思 */
+	border: 3px dashed #c60023;
+} 
+.address-item:hover,
+.address-add:hover{    /*  地址栏鼠标放上去的效果  */
+	background: #fafafa;
+}
+
+.address-item .address-title{	
+	color: #666;
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	border-bottom: 1px solid #ddd;
+}
+.address-item .address-detail{
+	margin-top: 5px;
+	height: 40px;
+	line-height: 20px;
+	overflow: hidden;
+	color: #666;
+}
+.address-item .address-opera{  /* 鼠标没有放入地址栏时，隐藏 编辑删除按钮 */
+	text-align: right;	
+	visibility: hidden;        /* 此处不用 display:none; 是因为其属性隐藏按钮以后会失去高度; 为了高度不变,使用visibility属性*/
+}
+.address-item:hover .address-opera{   /* 鼠标放上去显示 编辑删除按钮 */
+	visibility: visible; 
+}
+.address-item .address-opera .link{
+	margin-right: 5px;
+}
+.address-add .address-new{           /* 使用新地址 */
+	padding: 8px 0;
+	text-align: center;
+	color: #ccc;
+}
+.address-add .address-new .fa{
+	font-size: 50px;
+	line-height: 50px;
+}
+.address-add .address-new .text{
+	font-size: 12px;
+}
+
+/* 商品清单部分 */
+.product-table{
+	width: 100%;
+	margin-top: 10px;
+	border-collapse: collapse;
+}
+.product-table th,
+.product-table td{   /* 给所有的 th和td 添加样式 */
+	border-bottom: 1px dotted #ddd;
+}
+.product-table .cell-img{
+	padding: 10px;
+	width: 10%;
+	text-align: center;
+}
+.product-table .cell-img .p-img{
+	width: 80px;
+	height: 80px;
+	border: 1px solid #ddd;
+}
+.product-table .cell-info{
+	width: 30%;
+	text-align: left;  /* 居左 */
+}
+.product-table .cell-price{
+	width: 20%;
+	text-align: center;
+}
+.product-table .cell-count{
+	width: 20%;
+	text-align: center;
+}
+.product-table .cell-total{
+	width: 20%;
+	text-align: center;
+}
+/* 订单提交 */
+.submit-con{
+	background: #eee;
+	text-align: right;
+}
+.submit-con .submit-total{
+	margin-right: 20px;
+	font-size: 18px;
+	color: #c60023;
+	font-weight: bold;
+	vertical-align: middle;  /* 上下垂直居中 */
+}
+.submit-con .order-submit{
+	height: 50px;
+	line-height: 50px;
+	width: 100px;
+	text-align: center;
+}
+
+/* modal部分 */
+.modal{    /* 通过这种方法可以将modal做一个全屏的覆盖 */
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #eee;
+	background: rgba(0,0,0,.4);	 /* 在高级浏览器中会将上面的background覆盖掉，呈现半透明形式 */
+	z-index: 1000;
+	overflow-x: hidden;
+	overflow-y: auto;  /* 内容区足够长，超出所定宽度,则使用overflow-y: auto; */
+}
+.modal .modal-container{
+	width: 700px;
+	margin: 50px auto;
+	background: #fff;
+	border-radius: 2px;
+}
+.modal .modal-container .modal-header{
+	position: relative;
+	padding: 15px;
+	border-bottom: 1px solid #ccc;
+}
+.modal .modal-container .modal-header .modal-title{
+	font-size: 14px;
+}
+.modal .modal-container .modal-header .close{
+	position: absolute;
+	padding: 10px;
+	right: 10px;
+	top: 10px;
+	cursor: pointer;
+} 
+.modal .modal-container .modal-body{
+	padding: 15px;
+}
+
+/* form部分 */
+.form .form-line{
+	margin: 5px 0;
+	overflow: hidden;
+}
+.form .form-line .label{
+	display: block;
+	float: left;
+	width: 85px;  /* 80px 可以 */
+	text-align: right;
+	height: 30px;
+	line-height: 30px;
+	margin-right: 10px;
+	cursor: pointer; 
+}
+.form .form-line .label .required{  /* 确定哪个是选填、哪个是必填 */
+	color: red;
+}
+.form .form-line .form-item{
+	padding: 0 5px;
+	height: 30px;
+	line-height: 30px;
+	outline: none;
+	margin-right: 10px;
+}
+.form .form-line .btn{
+	margin-left: 95px;   /* 90px 可以 */
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+}
+
+

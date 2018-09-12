@@ -2,7 +2,7 @@
 * @Author: Winnie
 * @Date:   2018-08-25 19:52:47
 * @Last Modified by:   Winnie
-* @Last Modified time: 2018-08-31 16:15:59
+* @Last Modified time: 2018-09-12 17:03:50
 */
 
 /* 导航主体 */
@@ -24,6 +24,6 @@
 }
 /* 右侧内容区 */
 .content.with-nav{
-	/* float: left; */
+	float: left; 
 	width: 950px;  /* 1080px - 130px = 950px */
 }
