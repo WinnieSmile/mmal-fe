@@ -2,7 +2,7 @@
 * @Author: Winnie
 * @Date:   2018-08-20 16:14:45
 * @Last Modified by:   Winnie
-* @Last Modified time: 2018-09-13 16:10:05
+* @Last Modified time: 2018-09-13 23:38:57
 */
 var webpack             = require('webpack');
 var ExtractTextPlugin   = require("extract-text-webpack-plugin");
@@ -10,13 +10,14 @@ var HtmlWebpackPlugin   = require('html-webpack-plugin');
 
 // 环境变量的配置: dev / online
 var WEBPACK_ENV         = process.env.WEBPACK_ENV || 'dev';
-console.log(WEBPACK_ENV);    //区分是线上online 还是 开发环境dev
+//console.log(WEBPACK_ENV);    //区分是线上online 还是 开发环境dev
 
 // 获取html-webpack-plugin参数的方法
 var getHtmlConfig = function(name, title){
 	return {
 		template : './src/view/' + name + '.html',    //html本身的模板
 		filename : 'view/' + name + '.html',
+		favicon  : './favicon.ico',
 		title    : title,
 		inject   : true,
 		hash     : true,
@@ -43,11 +44,12 @@ var config = {
 		'user-center-update'   : ['./src/page/user-center-update/index.js'],
 		'user-pass-update'     : ['./src/page/user-pass-update/index.js'],
 		'result'               : ['./src/page/result/index.js'],
+		'about'                : ['./src/page/about/index.js'],
 	},
 	output:{
-		path:'./dist',   //存放文件时的路径,最终生成文件的目录
-		publicPath:'/dist',   //访问文件时的路径
-		filename:'js/[name].js'
+		path       : __dirname + '/dist/',   //存放文件时的路径,最终生成文件的目录
+		publicPath :'dev' === WEBPACK_ENV ? '/dist/' : '//s.happymmall.com/mmal-fe/dist/',   //访问文件时的路径
+		filename   :'js/[name].js'
 	},
 	externals : {
 		'jquery' : 'window.jQuery'
@@ -60,8 +62,8 @@ var config = {
                 test: /\.string$/, 
                 loader: 'html-loader',
                 query : {
-                    minimize : true,
-                    removeAttributeQuotes : false
+                    minimize : true,   //告诉html，在加载文件的时候，做最小化压缩
+                    removeAttributeQuotes : false     //这个参数就是指定: 是否删除属性上的引号; 此处设置为false,意思是不要删除引号
                 }
             }
 	    ]
@@ -105,6 +107,7 @@ var config = {
 		new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')),
 		new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
+		new HtmlWebpackPlugin(getHtmlConfig('about', '关于MMal')),
 			
 	],
 	devServer: {
