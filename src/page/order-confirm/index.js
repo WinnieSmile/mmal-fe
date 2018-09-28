@@ -2,7 +2,7 @@
 * @Author: Winnie
 * @Date:   2018-09-10 16:27:59
 * @Last Modified by:   Winnie
-* @Last Modified time: 2018-09-11 21:47:49
+* @Last Modified time: 2018-09-25 16:58:42
 */
 
 require('./index.css');
@@ -13,7 +13,7 @@ var _order            = require('service/order-service.js');     //购物车
 var _address          = require('service/address-service.js');
 var templateAddress   = require('./address-list.string');
 var templateProduct   = require('./product-list.string');
-var addressModal      = require('./address-Modal.js');   //引入address-Modal.js文件
+var addressModal      = require('./address-modal.js');   //引入address-Modal.js文件
 
 var page = {
     data : {

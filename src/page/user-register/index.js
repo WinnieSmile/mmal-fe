@@ -2,7 +2,7 @@
 * @Author: Winnie
 * @Date:   2018-08-27 06:47:45
 * @Last Modified by:   Winnie
-* @Last Modified time: 2018-08-28 20:41:59
+* @Last Modified time: 2018-09-25 17:34:56
 */
 require('./index.css');
 require('page/common/nav-simple/index.js');
@@ -30,6 +30,10 @@ var page = {
 		// 验证username
 		$('#username').blur(function(){
 			var username = $.trim($(this).val());
+			// 如果用户名为空，我们不做验证
+            if(!username){
+                return;
+            }
 			//异步验证用户名是否存在
 			_user.checkUsername(username, function(res){
 				formError.hide();
@@ -113,18 +117,18 @@ var page = {
 			result.msg = '邮箱格式不正确';
 			return result;
 		}
-		/*
+		
 		//验证密码提示问题是否为空
-		if (!_mm.validate(formData.question,'question')) {
+		if (!_mm.validate(formData.question,'require')) {
 			result.msg = '密码提示问题不能为空';
 			return result;
 		}
 		//验证密码提示问题答案是否为空
-		if (!_mm.validate(formData.answer,'answer')) {
+		if (!_mm.validate(formData.answer,'require')) {
 			result.msg = '密码提示问题答案不能为空';
 			return result;
 		}
-		*/
+		
 		// 通过验证，返回正确提示
 		result.status  = true;
 		result.msg     = '验证通过';

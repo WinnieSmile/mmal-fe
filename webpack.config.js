@@ -2,7 +2,7 @@
 * @Author: Winnie
 * @Date:   2018-08-20 16:14:45
 * @Last Modified by:   Winnie
-* @Last Modified time: 2018-09-13 23:38:57
+* @Last Modified time: 2018-09-27 19:34:25
 */
 var webpack             = require('webpack');
 var ExtractTextPlugin   = require("extract-text-webpack-plugin");
@@ -48,7 +48,7 @@ var config = {
 	},
 	output:{
 		path       : __dirname + '/dist/',   //存放文件时的路径,最终生成文件的目录
-		publicPath :'dev' === WEBPACK_ENV ? '/dist/' : '//s.happymmall.com/mmal-fe/dist/',   //访问文件时的路径
+		publicPath :'dev' === WEBPACK_ENV ? '/dist/' : '//s.iting.ink/mmal-fe/dist/',   //访问文件时的路径
 		filename   :'js/[name].js'
 	},
 	externals : {

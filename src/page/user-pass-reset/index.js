@@ -2,7 +2,7 @@
 * @Author: Winnie
 * @Date:   2018-08-27 17:46:36
 * @Last Modified by:   Winnie
-* @Last Modified time: 2018-08-28 22:31:54
+* @Last Modified time: 2018-09-25 17:25:45
 */
 require('./index.css');
 require('page/common/nav-simple/index.js');
@@ -45,7 +45,7 @@ var page = {
 			if (username) {
 				_user.getQuestion(username, function (res) {
 					_this.data.username = username;
-					_this.data.question = question;
+					_this.data.question = res;
 					_this.loadStepQuestion();  //该函数是第二步
 				}, function(errMsg){
 					formError.show(errMsg);
@@ -59,7 +59,7 @@ var page = {
 
 		// 输入密码提示问题答案中的按钮的点击
 		$('#submit-question').click(function(){
-			var username = $.trim(('#answer').val());   //如果用户名是空的话，需要添加trim			
+			var answer = $.trim(('#answer').val());   //如果用户名是空的话，需要添加trim			
 			// 密码提示问题答案存在
 			if (answer) {
 				//检查密码提示问题答案
@@ -113,8 +113,8 @@ var page = {
 		//清除错误提示
 		formError.hide();
 		//做容器的切换
-		$('.step-username')
-			.hide().siblings('.step-question').show()
+		$('.step-username').hide()
+			.siblings('.step-question').show()
 			.find('.question').text(this.data.question);
 	},
 	// 加载输入password的一步
